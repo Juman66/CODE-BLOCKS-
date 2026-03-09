@@ -1,0 +1,29 @@
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int sum = 0;
+        int max = Integer.MIN_VALUE;
+
+        for(int num : nums){
+            if(sum < 0){
+                sum = 0;
+            }
+
+            sum += num;
+            max = Math.max(max, sum);
+        }
+
+        return max;
+    }
+} 
+//leetcode 56
+//class Solution {
+//     public int maxSubArray(int[] nums) {
+//         int sum =0;
+//         int ans =Integer.MIN_VALUE;
+//         for(int i=0;i<nums.length;i++){
+//             sum=Math.max(nums[i],sum+nums[i]);
+//             ans=Math.max(ans,sum);
+//         }
+//         return ans;
+//     }
+// }
